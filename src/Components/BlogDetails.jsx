@@ -5,21 +5,25 @@ function BlogDetails({ post }) {
   return (
     <div className="mt-[30px] ">
       <NavLink to={`/blog/${post.id}`}>
-        <span>{post.title}</span>
+        <span className="font-bold text-md">{post.title}</span>
       </NavLink>
       <p>
-        By <span>{post.author}</span> on{' '}
+        By <span className="font-semibold">{post.author}</span> on{' '}
         <NavLink to={`/categories/${post.category}`}>
-          <span>{post.category}</span>
+          <span className="font-weight-[300px] italic underline">
+            {post.category}
+          </span>
         </NavLink>
       </p>
-      <p>Posted on {post.date}</p>
+      <p>
+        Posted on <span>{post.date}</span>
+      </p>
       <p>{post.content}</p>
 
       <div>
         {post.tags.map((tag, index) => (
           <NavLink key={index} to={`/tags/${tag}`}>
-            <span>{`#${tag}`}</span>
+            <span className="px-1 py-2">{`#${tag}`}</span>
           </NavLink>
         ))}
       </div>

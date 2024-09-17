@@ -9,7 +9,7 @@ function Pagination() {
         <div className="flex ">
           {page > 1 && (
             <button
-              className="border-2 py-1 px-4 rounded-md"
+              className="border-2 border-slate-400 py-1 px-4 rounded-md"
               onClick={() => handlePageChange(page - 1)}
             >
               Previous
@@ -19,7 +19,7 @@ function Pagination() {
         <div>
           {page < totalPages && (
             <button
-              className="border-2 py-1 px-4 rounded-md"
+              className="border-2 border-slate-400 py-1 px-4 rounded-md"
               onClick={() => handlePageChange(page + 1)}
             >
               Next

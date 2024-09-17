@@ -24,8 +24,7 @@ function BlogPage() {
       console.log(data);
       const result = setBlog(data.blog);
       console.log(result);
-      const str = setRelatedBlogs(data.relatedBlogs);
-      console.log(str);
+      setRelatedBlogs(data.relatedBlogs);
     } catch (error) {
       console.log('Found an error');
       setBlog(null);
@@ -41,7 +40,7 @@ function BlogPage() {
     }
   }, [location.pathname]);
   return (
-    <div className="mt-[80px]">
+    <div className="mt-[80px] ">
       <Header />
       <div>
         <button onClick={() => navigation(-1)}>Back</button>
@@ -53,7 +52,7 @@ function BlogPage() {
         </div>
       ) : blog ? (
         <div>
-          {/* <BlogDetails post={blog} /> */}
+          <BlogDetails post={blog} />
           <h2>Related Blogs</h2>
           {relatedBlogs.map((post) => (
             <div key={post.id}>
