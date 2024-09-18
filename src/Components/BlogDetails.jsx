@@ -23,7 +23,7 @@ function BlogDetails({ post }) {
       <div>
         {post.tags.map((tag, index) => (
           <NavLink key={index} to={`/tags/${tag}`}>
-            <span className="px-1 py-2">{`#${tag}`}</span>
+            <span className="px-1 py-2 font-sans font-semibold">{`#${tag}`}</span>
           </NavLink>
         ))}
       </div>

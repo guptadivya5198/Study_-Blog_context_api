@@ -9,7 +9,7 @@ function Blogs() {
   // console.log('Printing');
   // console.log(posts);
   return (
-    <div className="w-11/12 max-w-[650px] py-4 flex flex-col ml-[430px] mt-[60px] mb-[70px]">
+    <div className="w-11/12 max-w-[650px] py-4 items-center flex flex-col ml-[430px] mt-[30px] mb-[70px]">
       {loading ? (
         <Spinner />
       ) : posts.length === 0 ? (

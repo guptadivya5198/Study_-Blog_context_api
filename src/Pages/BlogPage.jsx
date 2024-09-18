@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import { AppContext } from '../Context/AppContext';
 import BlogDetails from '../Components/BlogDetails';
+import Spinner from '../Components/Spinner';
 
 function BlogPage() {
   const newBaseUrl = 'https://codehelp-apis.vercel.app/api/';
@@ -40,20 +41,24 @@ function BlogPage() {
     }
   }, [location.pathname]);
   return (
-    <div className="mt-[80px] ">
+    <div>
       <Header />
       <div>
-        <button onClick={() => navigation(-1)}>Back</button>
+        <button
+          className=" flex flex-col ml-[430px] mt-[95px] border-slate-500 border rounded-md px-5 py-2"
+          onClick={() => navigation(-1)}
+        >
+          Back
+        </button>
       </div>
       {loading ? (
         <div>
-          {' '}
-          <p>Loading..</p>{' '}
+          <Spinner /> <p className="text-center ">Loading..</p>{' '}
         </div>
       ) : blog ? (
-        <div>
+        <div className="w-11/12 max-w-[650px] py-1 flex flex-col ml-[430px] mb-[70px]">
           <BlogDetails post={blog} />
-          <h2>Related Blogs</h2>
+          <h2 className="font-bold underline mt-4 text-xl">Related Blogs</h2>
           {relatedBlogs.map((post) => (
             <div key={post.id}>
               <BlogDetails post={post} />{' '}
